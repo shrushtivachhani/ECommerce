@@ -3,6 +3,7 @@ const { User } = require('../Model/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+//show product
 const getAllProducts = async (req, res) => {
     try {
         const products = await Product.find({});
@@ -16,6 +17,7 @@ const getAllProducts = async (req, res) => {
     }
 }
 
+//add product
 const addProduct = async (req, res) => {
     try {
         const { name, image, brand, stock, price, description } = req.body;
@@ -59,6 +61,7 @@ const addProduct = async (req, res) => {
     }
 }
 
+//get product
 const getProductById = async(req, res)=>{
     try{
         const id = req.params.id;
@@ -73,6 +76,7 @@ const getProductById = async(req, res)=>{
     }
 }
 
+//update product
 const updateProduct = async(req, res)=>{
     try{
         const id = req.params.id;
@@ -88,6 +92,7 @@ const updateProduct = async(req, res)=>{
     }
 }
 
+//delete product
 const deleteProduct = async(req, res)=>{
     try{
         const id = req.params.id;
