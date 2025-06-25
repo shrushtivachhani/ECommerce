@@ -63,7 +63,7 @@ const login = async (req, res) => {
         //jwt token
         const token = jwt.sign({ userId: user._id }, "supersecret",
             {
-                expiresIn: '1h'
+                expiresIn: '1d'
             }
         );
         // res.status(200).json({ token });
