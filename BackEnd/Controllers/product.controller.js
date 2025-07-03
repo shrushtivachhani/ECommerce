@@ -20,7 +20,7 @@ const getAllProducts = async (req, res) => {
 //add product
 const addProduct = async (req, res) => {
     try {
-        const { name, image, brand, stock, price, description } = req.body;
+        const { name, image, brand, stock, price, description, sizes, colors } = req.body;
 
         // const { token } = req.headers;
         // const decodedToken = jwt.verify(token, "supersecret");
@@ -35,7 +35,7 @@ const addProduct = async (req, res) => {
         if (existingProduct) {
             return res.status(400).json({ message: 'Product already exists' });
         }
-        if (!name || !image || !brand || !stock || !price || !description) {
+        if (!name || !image || !brand || !stock || !price || !description || !sizes || !colors) {
             return res.status(400).json({ message: 'Please fill in all fields' });
         }
         // const user = await User.findOne({ email: decodedToken.email });
@@ -46,6 +46,8 @@ const addProduct = async (req, res) => {
             description,
             stock,
             brand,
+            sizes,
+            colors,
             user: token.userId
         })
         return res.status(200).json({

@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 const port = 8080;
+require('dotenv').config();
 const connectDB = require('./DB/connectDB');
 const cors = require("cors");
 const morgan = require("morgan");
 const routes = require('./routes');
+
 // const userRoutes = require('./routes/user.route');
 // const productRoutes =require('./routes/product.route');
 

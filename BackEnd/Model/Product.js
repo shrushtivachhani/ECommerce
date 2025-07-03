@@ -30,7 +30,9 @@ const productSchema = new mongoose.Schema(
         user:{
             type:mongoose.Schema.Types.ObjectId,
             ref:"User"
-        }
+        },
+        sizes: [String],  // Example: ["S", "M", "L", "XL"]
+        colors: [String]  // Example: ["red", "blue", "black"]
     }
 )
 

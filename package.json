@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "stripe": "^18.2.1"
+  }
+}
